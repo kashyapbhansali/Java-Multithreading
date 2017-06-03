@@ -15,11 +15,11 @@ class Processor extends Thread {
      execution of thread p1, since p1 is using cached version of
      (var running = true). Volatile helps to avoid this scenario.
      */
-    private volatile boolean running = true;
+    private volatile boolean running = true; // see explanation above
 
     public void run() {
 
-        while(true) {
+        while(running) {  // see explanation above
             System.out.println("Hello");
 
             try {
@@ -36,12 +36,12 @@ class Processor extends Thread {
 }
 
 
-public class App {
+public class VolatileKeyword {
     public static void main(String[] args) {
         Processor p1 = new Processor();
         p1.start();
 
-
+        System.out.println("Press ENTER to stop...");
         Scanner sc = new Scanner(System.in);
         sc.nextLine();
 
