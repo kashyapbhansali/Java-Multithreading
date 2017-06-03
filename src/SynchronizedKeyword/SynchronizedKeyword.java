@@ -1,4 +1,4 @@
-package basic_synchronization;
+package SynchronizedKeyword;
 
 public class SynchronizedKeyword {
     private int count = 0;

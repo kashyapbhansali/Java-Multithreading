@@ -1,4 +1,4 @@
-package basic_synchronization;
+package VolatileKeyword;
 
 import java.util.Scanner;
 
